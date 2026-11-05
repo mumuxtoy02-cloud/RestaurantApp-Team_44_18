@@ -80,7 +80,7 @@ namespace RestaurantApp_Team_44_18
         // คน B รับผิดชอบ
         static void ShowGoodRating()
         {
-            Console.WriteLine("\n--- Restaurants with Rating >= 4.5 ---");
+            Console.WriteLine("\n--- Restaurants with Rating ");
 
             var good = restaurants.Where(r => r.Rating >= 4.5).ToList();
 
