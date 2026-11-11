@@ -19,7 +19,10 @@ namespace RestaurantApp_Team_44_18
     {
         new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
         new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
+        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.4 }
+        new Restaurant { Name = "paizza", Type = "Italia", Rating = 4.9 }
+        new Restaurant { Name = "BBQ plaza", Type = "Grill or roast", Rating = 4.3 }
+        new Restaurant { Name = "McDonald's ", Type = "fast food" = 4.1 }
     };
 
         static void Main(string[] args)
@@ -58,7 +61,23 @@ namespace RestaurantApp_Team_44_18
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+            Console.Write("Enter restaurant name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter restaurant type: ");
+            string type = Console.ReadLine();
+
+            double rating;
+            while (true)
+            {
+                Console.Write("Enter rating (0 - 5): ");
+                if (double.TryParse(Console.ReadLine(), out rating) && rating >= 0 && rating <= 5)
+                    break;
+                Console.WriteLine("Invalid rating. Please enter a number between 0 and 5.");
+            }
+
+            restaurants.Add(new Restaurant { Name = name, Type = type, Rating = rating });
+            Console.WriteLine("Restaurant added successfully!");
         }
 
         // คน B รับผิดชอบ
